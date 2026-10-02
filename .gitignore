@@ -1,0 +1,5 @@
+source-notes/
+__pycache__/
+_site/
+node_modules/
+qa-*.png
