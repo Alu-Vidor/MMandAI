@@ -89,5 +89,8 @@ for row in ws.iter_rows(min_row=7):
   elif 'преддиплом' in name:about='Подготовка материалов и результатов для выпускной работы.';why='Проверить постановку задачи и собрать основу для защиты.';example='Завершить эксперименты и подготовить анализ результатов.'
   else:about='Практика научно-исследовательской работы.';why='Научиться ставить вопрос, выбирать метод и воспроизводимо проверять выводы.';example='Провести вычислительный эксперимент и подготовить исследовательский отчёт.'
  rows.append(dict(id=codeid,name=name,semesters=sem,credits=row[9].value or 0,hours=row[11].value or 0,group=group,about=about,why=why,example=example,kind='Практика' if group=='practice' else 'Обязательная дисциплина',source='Учебный план; пояснение для абитуриентов',skills=['ПК-1','ПК-3'] if group=='practice' else ['Универсальные компетенции']))
+examples=json.loads(Path('tools/practical_examples.json').read_text(encoding='utf-8'))
+for r in rows:
+ r['example']=examples[r['name']]
 Path('data.js').write_text('window.COURSES = '+json.dumps(rows,ensure_ascii=False,indent=2)+';\nwindow.GROUPS = '+json.dumps(categories,ensure_ascii=False)+';\n',encoding='utf-8')
 print('Verified and written',len(rows),'courses and practices')
