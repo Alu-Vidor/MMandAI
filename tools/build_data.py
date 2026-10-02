@@ -54,8 +54,6 @@ for r in rows:
  r['about'],r['why'],r['example']=copy[r['name']]
  r['group']='model' if r['name'] in model else 'ai' if r['name'] in ai else 'code' if r['name'] in code else 'general' if r['name'] in {'Педагогика и психология','Теория и методика преподавания математики','Введение в профессиональную деятельность'} else 'math'
  r['kind']='Факультатив' if r['id'].startswith('ФТД') else 'По выбору · '+('пара 1' if '.ДВ.01.' in r['id'] else 'пара 2') if '.ДВ.' in r['id'] else 'Обязательная дисциплина' if '.О.' in r['id'] else 'Профильная дисциплина'
- r['source']='РПД и учебный план'
- r['skills']=['ПК-2'] if r['name'] in {'Глубокое обучение','Машинное обучение','Методы оптимизации'} else ['ПК-4'] if r['group']=='code' else ['ПК-1'] if r['group'] in {'model','math','ai'} else ['ОПК-4']
 general={
 'История России':('Исторические процессы и работа с источниками.','Понимать исторический контекст, критически оценивать сведения и аргументировать выводы.','Сопоставить источники и отделить факт от его интерпретации.'),
 'Экономика':('Экономические понятия, ресурсы и принятие решений.','Учитывать экономические ограничения и смысл показателей при моделировании.','Оценить затраты и результат предложенного решения.'),
@@ -88,7 +86,7 @@ for row in ws.iter_rows(min_row=7):
   elif 'проектно' in name:about='Практическая работа над проектно-технологической задачей.';why='Применить методы и программирование к целостной задаче с проверяемым результатом.';example='Разработать вычислительный прототип и описать его проверку.'
   elif 'преддиплом' in name:about='Подготовка материалов и результатов для выпускной работы.';why='Проверить постановку задачи и собрать основу для защиты.';example='Завершить эксперименты и подготовить анализ результатов.'
   else:about='Практика научно-исследовательской работы.';why='Научиться ставить вопрос, выбирать метод и воспроизводимо проверять выводы.';example='Провести вычислительный эксперимент и подготовить исследовательский отчёт.'
- rows.append(dict(id=codeid,name=name,semesters=sem,credits=row[9].value or 0,hours=row[11].value or 0,group=group,about=about,why=why,example=example,kind='Практика' if group=='practice' else 'Обязательная дисциплина',source='Учебный план; пояснение для абитуриентов',skills=['ПК-1','ПК-3'] if group=='practice' else ['Универсальные компетенции']))
+ rows.append(dict(id=codeid,name=name,semesters=sem,credits=row[9].value or 0,hours=row[11].value or 0,group=group,about=about,why=why,example=example,kind='Практика' if group=='practice' else 'Обязательная дисциплина'))
 examples=json.loads(Path('tools/practical_examples.json').read_text(encoding='utf-8'))
 for r in rows:
  r['example']=examples[r['name']]
