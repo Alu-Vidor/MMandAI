@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser()
 parser.add_argument('--plan', type=Path)
 args = parser.parse_args()
-plans = [args.plan] if args.plan else list(Path('C:/Users/danii/Desktop/РПД/МатМодиИИ/Учебный план').glob('*.xlsx'))
+plans = [args.plan] if args.plan else list(Path('C:/Users/danii/Desktop/РПД/МатМодиИИ/Учебный план+').glob('*.xlsx'))
 if len(plans) != 1:
     raise ValueError('Provide the authoritative workbook with --plan')
 plan = plans[0]
@@ -60,7 +60,8 @@ changes = {
 (ROOT/'source-notes/curriculum-diff.json').write_text(json.dumps(changes,ensure_ascii=False,indent=2),encoding='utf-8')
 # Rebind cross-links by course name before replacing the IDs in generated data.
 aliases = {'Программирование математических вычислений':'Программирование и прикладная математика',
-           'Прикладные задачи высшей математики':'Компьютерные технологии в математике'}
+           'Прикладные задачи высшей математики':'Компьютерные технологии в математике',
+           'Производственная практика (проектно-технологическая)':'Производственная практика (проектно-технологическая практика)'}
 html_path = ROOT/'index.html'
 html = html_path.read_text(encoding='utf-8')
 old_by_id = {c['id']:c for c in old}
