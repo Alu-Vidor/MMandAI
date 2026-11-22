@@ -103,5 +103,109 @@ function initializeVacancies(carousel) {
  }, {passive: true});
 }
 
+async function loadVacancies(carousel) {
+ const message = carousel.querySelector('.vacancy-message');
+ const track = carousel.querySelector('.vacancy-track');
+ const freshness = carousel.querySelector('.vacancy-freshness');
+ const template = carousel.querySelector('#vacancy-template');
+ const marketNames = {ru: 'HH.ru', international: 'За рубежом'};
+ const courseIds = {
+  ml: ['Б1.В.01.07', 'Б1.В.01.06'],
+  model: ['Б1.О.04.08', 'Б1.О.04.07'],
+  data: ['Б1.О.04.18', 'Б1.О.04.12'],
+  education: ['Б1.О.04.23', 'Б1.О.04.22']
+ };
+ const dateFormat = new Intl.DateTimeFormat('ru-RU', {
+  dateStyle: 'medium', timeStyle: 'short', timeZone: 'Europe/Moscow'
+ });
+ const postingFormat = new Intl.DateTimeFormat('ru-RU', {
+  dateStyle: 'long', timeZone: 'Europe/Moscow'
+ });
+ const maxAge = 24 * 60 * 60 * 1000;
+ const allowedPaths = new Map([
+  ['https://hh.ru', /^\/vacancy\/\d+\/?$/],
+  ['https://job-boards.greenhouse.io', /^\/[\w-]+\/jobs\/\d+\/?$/],
+  ['https://job-boards.eu.greenhouse.io', /^\/[\w-]+\/jobs\/\d+\/?$/],
+  ['https://boards.greenhouse.io', /^\/[\w-]+\/jobs\/\d+\/?$/],
+  ['https://jobs.ashbyhq.com', /^\/[\w-]+\/[\da-f-]+\/?$/]
+ ]);
+
+ function safeUrl(value) {
+  try {
+   const url = new URL(value);
+   return !url.username && !url.password && allowedPaths.get(url.origin)?.test(url.pathname)
+    ? url.href : null;
+  } catch {
+   return null;
+  }
+ }
+
+ message.hidden = false;
+ message.textContent = 'Загружаем вакансии…';
+ try {
+  const response = await fetch('vacancies.json', {cache: 'no-cache'});
+  if (!response.ok) throw new Error('Vacancy feed unavailable');
+  const {sources} = await response.json();
+  const markets = {ru: [], international: []};
+  const used = new Set();
+  for (const feed of Object.values(sources)) {
+   const checked = Date.parse(feed.checkedAt);
+   if (!Number.isFinite(checked) || Date.now() - checked > maxAge || !markets[feed.market]) continue;
+   // Take one role from each search or employer to keep the selection varied.
+   for (const job of feed.jobs) {
+    const url = safeUrl(job.url);
+    if (!url || used.has(url) || typeof job.title !== 'string' || !job.title) continue;
+    used.add(url);
+    markets[feed.market].push({...job, url, checked, market: feed.market});
+    break;
+   }
+  }
+  const jobs = [];
+  for (let i = 0; i < Math.max(markets.ru.length, markets.international.length); i++) {
+   if (markets.ru[i]) jobs.push(markets.ru[i]);
+   if (markets.international[i]) jobs.push(markets.international[i]);
+  }
+  if (!jobs.length) throw new Error('No current vacancies');
+
+  const cards = jobs.map((job, index) => {
+   const card = template.content.firstElementChild.cloneNode(true);
+   card.setAttribute('aria-label', `${index + 1} из ${jobs.length}`);
+   card.querySelector('.vacancy-source').textContent = [marketNames[job.market], job.location].filter(Boolean).join(' · ');
+   const title = card.querySelector('h4');
+   title.textContent = job.title;
+   if (job.market === 'international') title.lang = 'en';
+   card.querySelector('.vacancy-employer').textContent = job.organization || '';
+   card.querySelector('.vacancy-link').href = job.url;
+   const published = Date.parse(job.published);
+   if (Number.isFinite(published)) {
+    const date = card.querySelector('.vacancy-posted');
+    date.textContent = `Опубликовано ${postingFormat.format(published)}`;
+    date.hidden = false;
+   }
+   const related = Object.hasOwn(courseIds, job.field) ? courseIds[job.field] : [];
+   for (const id of related) {
+    const course = window.COURSES.find(item => item.id === id);
+    if (!course) continue;
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.dataset.course = id;
+    button.textContent = course.name;
+    card.querySelector('.vacancy-courses').append(button);
+   }
+   return card;
+  });
+  track.replaceChildren(...cards);
+  track.hidden = false;
+  message.hidden = true;
+  freshness.textContent = 'Последняя проверка — ' + Object.entries(markets).filter(([, group]) => group.length)
+   .map(([market, group]) => `${marketNames[market]} · ${dateFormat.format(Math.min(...group.map(job => job.checked)))}`)
+   .join(' / ') + ' (мск)';
+  freshness.hidden = false;
+  if (jobs.length > 1) initializeVacancies(carousel);
+ } catch {
+  message.textContent = 'Подборка пока недоступна. Открытые вакансии можно посмотреть на сайтах работодателей и HH.ru.';
+ }
+}
+
 const vacancyCarousel = document.querySelector('.vacancies');
-if (vacancyCarousel) initializeVacancies(vacancyCarousel);
+if (vacancyCarousel) loadVacancies(vacancyCarousel);

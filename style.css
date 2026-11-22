@@ -178,6 +178,10 @@ summary { cursor: pointer; font-weight: 600; }
   gap: .7rem 1.25rem;
 }
 .vacancies-heading p, .vacancies-footer p { color: var(--muted); font-size: .875rem; }
+.vacancies-footer a { display: inline-block; margin-inline-end: .85rem; color: var(--blue); font-size: .875rem; text-underline-offset: .2em; }
+.vacancy-message { margin-block: 1rem; color: var(--muted); }
+.vacancy-freshness { margin-block-end: .2rem; }
+.vacancy-posted { margin-block-end: .65rem; }
 .vacancies-heading h3 { margin-block-end: .25rem; font: 550 clamp(1.5rem, 1.15rem + 1.25vw, 2.25rem)/1.2 var(--serif); }
 .vacancy-navigation { display: flex; gap: .45rem; }
 .vacancy-navigation button {

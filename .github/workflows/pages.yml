@@ -3,6 +3,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
 permissions:
   contents: read
   pages: write
@@ -25,6 +27,8 @@ jobs:
           cp index.html style.css app.js data.js black-hole.js _site/
           cp -r assets _site/
           touch _site/.nojekyll
+      - name: Refresh public vacancy feeds
+        run: python3 tools/refresh_vacancies.py _site/vacancies.json
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
