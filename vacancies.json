@@ -1,0 +1,198 @@
+{
+  "sources": {
+    "hh-ml": {
+      "market": "ru",
+      "checkedAt": "2026-11-22T16:30:02.924146+00:00",
+      "jobs": [
+        {
+          "title": "DS\\ML Инженер",
+          "organization": "РНПК",
+          "location": "Москва",
+          "url": "https://hh.ru/vacancy/139671287",
+          "field": "ml",
+          "published": "2026-11-22T14:18:36.410000+00:00"
+        },
+        {
+          "title": "ML-инженер / AI Research Engineer (анализ музыки и генерация видео)",
+          "organization": "Боронд, Группа компаний",
+          "location": "Москва",
+          "url": "https://hh.ru/vacancy/139541536",
+          "field": "ml",
+          "published": "2026-11-22T13:06:53.551000+00:00"
+        },
+        {
+          "title": "ML-инженер",
+          "organization": "Т-Банк. ИТ. Разработка",
+          "location": "Красноярск",
+          "url": "https://hh.ru/vacancy/138782816",
+          "field": "ml",
+          "published": "2026-11-22T08:47:05.360000+00:00"
+        }
+      ]
+    },
+    "hh-model": {
+      "market": "ru",
+      "checkedAt": "2026-11-22T16:30:02.991504+00:00",
+      "jobs": [
+        {
+          "title": "Инженер-программист (математическое моделирование)",
+          "organization": "ФГУП Центральный научно-исследовательский институт химии и механики",
+          "location": "Москва",
+          "url": "https://hh.ru/vacancy/133465940",
+          "field": "model",
+          "published": "2026-11-21T10:55:46.508000+00:00"
+        },
+        {
+          "title": "Ведущий специалист по математическому моделированию",
+          "organization": "ФЦДТ СОЮЗ",
+          "location": "Дзержинский (Московская область)",
+          "url": "https://hh.ru/vacancy/134431752",
+          "field": "model",
+          "published": "2026-11-19T07:58:21.001000+00:00"
+        },
+        {
+          "title": "Ведущий инженер-химик (математическое моделирование)",
+          "organization": "Титан, Группа компаний",
+          "location": "Омск",
+          "url": "https://hh.ru/vacancy/139640845",
+          "field": "model",
+          "published": "2026-11-19T05:34:10.918000+00:00"
+        }
+      ]
+    },
+    "hh-data": {
+      "market": "ru",
+      "checkedAt": "2026-11-22T16:30:02.911891+00:00",
+      "jobs": [
+        {
+          "title": "Аналитик данных (коммерческий блок)",
+          "organization": "Ozon fresh",
+          "location": "Москва",
+          "url": "https://hh.ru/vacancy/138983907",
+          "field": "data",
+          "published": "2026-11-22T15:24:00.926000+00:00"
+        },
+        {
+          "title": "Аналитик данных",
+          "organization": "СИГМАКОД",
+          "location": "Москва",
+          "url": "https://hh.ru/vacancy/138799808",
+          "field": "data",
+          "published": "2026-11-22T15:01:43.221000+00:00"
+        },
+        {
+          "title": "Аналитик данных",
+          "organization": "ЗУБР ОВК",
+          "location": "Москва",
+          "url": "https://hh.ru/vacancy/138973040",
+          "field": "data",
+          "published": "2026-11-22T11:16:04.771000+00:00"
+        }
+      ]
+    },
+    "hh-education": {
+      "market": "ru",
+      "checkedAt": "2026-11-22T16:30:02.956583+00:00",
+      "jobs": [
+        {
+          "title": "Учитель математики и информатики",
+          "organization": "МБОУ СОШ №95",
+          "location": "Екатеринбург",
+          "url": "https://hh.ru/vacancy/139718164",
+          "field": "education",
+          "published": "2026-11-22T16:13:30.412000+00:00"
+        },
+        {
+          "title": "Преподаватель математики",
+          "organization": "Альянс Знаний",
+          "location": "Омск",
+          "url": "https://hh.ru/vacancy/138855601",
+          "field": "education",
+          "published": "2026-11-22T15:34:30.014000+00:00"
+        },
+        {
+          "title": "Преподаватель математики и информатики",
+          "organization": "ДЖЕЙКЕТ",
+          "location": "Москва",
+          "url": "https://hh.ru/vacancy/139672945",
+          "field": "education",
+          "published": "2026-11-22T15:07:19.270000+00:00"
+        }
+      ]
+    },
+    "physicsx": {
+      "market": "international",
+      "checkedAt": "2026-11-22T16:30:03.111865+00:00",
+      "jobs": [
+        {
+          "title": "Senior/Principal Machine Learning Engineer (Aerospace Manufacturing)",
+          "organization": "PhysicsX",
+          "location": "New York, United States",
+          "url": "https://job-boards.eu.greenhouse.io/physicsx/jobs/5026120101",
+          "field": "ml",
+          "published": null
+        },
+        {
+          "title": "Simulation Engineer (CFD) - Large Physics Models",
+          "organization": "PhysicsX",
+          "location": "London, United Kingdom",
+          "url": "https://job-boards.eu.greenhouse.io/physicsx/jobs/5018019101",
+          "field": "model",
+          "published": null
+        },
+        {
+          "title": "Senior Simulation Engineer - Electromagnetics Specialist",
+          "organization": "PhysicsX",
+          "location": "New York",
+          "url": "https://job-boards.eu.greenhouse.io/physicsx/jobs/4952597101",
+          "field": "model",
+          "published": null
+        }
+      ]
+    },
+    "constructorknowledgelabs": {
+      "market": "international",
+      "checkedAt": "2026-11-22T16:30:03.069199+00:00",
+      "jobs": [
+        {
+          "title": "Quantum Physicist — Simulation and Neutral Atoms",
+          "organization": "Constructor Labs",
+          "location": "Germany",
+          "url": "https://job-boards.eu.greenhouse.io/constructorknowledgelabs/jobs/4981069101",
+          "field": "model",
+          "published": null
+        },
+        {
+          "title": "Senior Scientific Software Engineer — Simulation and Machine Learning",
+          "organization": "Constructor Labs",
+          "location": "Germany",
+          "url": "https://job-boards.eu.greenhouse.io/constructorknowledgelabs/jobs/4981061101",
+          "field": "model",
+          "published": null
+        }
+      ]
+    },
+    "root-access": {
+      "market": "international",
+      "checkedAt": "2026-11-22T16:30:03.006197+00:00",
+      "jobs": [
+        {
+          "title": "Simulation and Software Engineer",
+          "organization": "Root Access",
+          "location": "New York City",
+          "url": "https://jobs.ashbyhq.com/root-access/a35e2e4e-1a13-48c7-8dd2-d4d80e5a722d",
+          "field": "model",
+          "published": "2026-10-12T23:07:20.860000+00:00"
+        },
+        {
+          "title": "Machine Learning Engineer (Physics-based)",
+          "organization": "Root Access",
+          "location": "New York City",
+          "url": "https://jobs.ashbyhq.com/root-access/6ab61b1c-b92d-4189-86fc-9dc98d5a69ce",
+          "field": "ml",
+          "published": "2026-10-12T22:45:26.297000+00:00"
+        }
+      ]
+    }
+  }
+}
