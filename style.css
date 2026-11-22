@@ -48,11 +48,19 @@ nav a, .nav-cta { display: inline-flex; align-items: center; min-block-size: 2.7
 nav a:hover, .footer-main > a:hover { text-decoration: underline; text-underline-offset: .25em; }
 .nav-cta { padding-inline: .9rem; border: 1px solid var(--line); border-radius: 99rem; }
 .nav-cta:hover { background: var(--wash); }
-.hero { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(1.75rem, 5vw, 5rem); align-items: center; padding-block: clamp(2.25rem, 1rem + 4vw, 5.5rem); }
-.hero-copy { min-inline-size: 0; }
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 'title model' 'details model';
+  gap: 1.4rem clamp(1.75rem, 5vw, 5rem);
+  padding-block: clamp(2.25rem, 1rem + 4vw, 5.5rem);
+}
+.hero-copy { grid-area: title; align-self: end; min-inline-size: 0; }
+.hero-details { grid-area: details; min-inline-size: 0; }
 .eyebrow { color: var(--green); font-size: .78rem; font-weight: 700; letter-spacing: .085em; margin-block-end: 1rem; }
 .hero h1 span { display: block; color: var(--green); }
-.intro { max-inline-size: 38ch; margin-block: 1.4rem 1.65rem; color: var(--muted); font-size: clamp(1rem, .91rem + .4vw, 1.24rem); }
+.intro { max-inline-size: 38ch; margin-block-end: 1.65rem; color: var(--muted); font-size: clamp(1rem, .91rem + .4vw, 1.24rem); }
 .button { display: inline-flex; align-items: center; justify-content: center; min-block-size: 3.1rem; padding: .65rem 1.2rem; border-radius: .6rem; background: var(--green-deep); color: var(--light-ink); text-decoration: none; font-weight: 600; }
 .button:hover { background: var(--green); }
 .facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; margin-block-start: 2rem; border-top: 1px solid var(--line); padding-block-start: 1rem; }
@@ -60,7 +68,7 @@ nav a:hover, .footer-main > a:hover { text-decoration: underline; text-underline
 .facts b { font-size: clamp(1.05rem, .9rem + .6vw, 1.5rem); line-height: 1.25; }
 .facts small { color: var(--muted); font-size: .78rem; margin-block-start: .3rem; }
 
-.black-hole-card { min-inline-size: 0; border-radius: var(--radius); border: 1px solid var(--night-line); background: var(--night); color: var(--light-ink); box-shadow: 0 24px 50px #15272126; }
+.black-hole-card { grid-area: model; align-self: center; min-inline-size: 0; border-radius: var(--radius); border: 1px solid var(--night-line); background: var(--night); color: var(--light-ink); box-shadow: 0 24px 50px #15272126; }
 .black-hole-card :focus-visible { outline-color: var(--gold); }
 .model-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .5rem; padding: .65rem 1.2rem; border-bottom: 1px solid var(--night-line); }
 .model-top span { font-size: .75rem; font-weight: 600; letter-spacing: .1em; color: var(--light-muted); }
@@ -191,8 +199,8 @@ footer { background: var(--wash); color: var(--muted); padding-block: 1.25rem; }
   .scroll-hint { display: block; }
 }
 @media (max-width: 56rem) {
-  .hero { grid-template-columns: minmax(0, 1fr); }
-  .hero-copy { max-inline-size: 42rem; }
+  .hero { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto; grid-template-areas: 'title' 'model' 'details'; }
+  .hero-copy, .hero-details { max-inline-size: 42rem; }
   .black-hole-card { inline-size: min(100%, 42rem); }
 }
 @media (max-width: 44rem) {
@@ -200,6 +208,11 @@ footer { background: var(--wash); color: var(--muted); padding-block: 1.25rem; }
   nav { inline-size: 100%; gap: 0 .75rem; }
   nav a, .nav-cta { font-size: .81rem; }
   .nav-cta { padding-inline: 0; border: 0; color: var(--green); }
+  .hero { padding-block-start: 1.25rem; gap: 1.25rem; }
+  .hero .eyebrow { margin-block-end: .55rem; }
+  .hero h1 { font-size: clamp(1.85rem, 1.25rem + 2.6vw, 2.85rem); line-height: 1.12; }
+  .model-top { padding: .25rem .85rem; }
+  .bh-caption, .bh-controls, .bh-explanation { padding-inline: .85rem; }
   .heading, .pillars, .future-grid, .admission { grid-template-columns: minmax(0, 1fr); }
   .journey { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .journey > div:nth-child(-n + 2) { border-block-end: 1px solid var(--line); }
@@ -209,5 +222,7 @@ footer { background: var(--wash); color: var(--muted); padding-block: 1.25rem; }
   #gantt { min-inline-size: 42rem; --gantt-columns: 9.5rem repeat(10, minmax(3.2rem, 1fr)); }
 }
 @media (max-width: 22rem) {
+  nav { column-gap: .45rem; }
+  nav a, .nav-cta { font-size: .75rem; }
   .bh-controls { grid-template-columns: minmax(0, 1fr); }
 }
