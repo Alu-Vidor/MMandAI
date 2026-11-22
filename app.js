@@ -20,3 +20,88 @@ function careerText(c){
 function openCourse(id){const c=courses.find(c=>c.id===id);if(!c)return;document.querySelector('#detail').innerHTML=`<div style="--category:${colors[c.group]}"><div class="detail-tag">${esc(groups[c.group])} · ${esc(c.kind)}</div><h2 class="detail-title" id="detail-title">${esc(c.name)}</h2><div class="detail-meta"><span>Семестры: ${c.semesters.join(', ')}</span><span>${c.credits} з.е.</span><span>${c.hours} часов</span></div><div class="detail-block"><h3>Что изучаем</h3><p>${esc(c.about)}</p></div><div class="detail-block why"><h3>Зачем это нужно?</h3><p>${esc(c.why)}</p></div><div class="detail-block"><h3>Например, вы сможете</h3><p>${esc(c.example)}</p></div>${careerText(c)?`<div class="detail-block"><h3>Кому пригодится в работе</h3><p>${esc(careerText(c))}</p></div>`:''}${c.kind.includes('выбору')?'<div class="detail-block"><p>В этой паре выбирается один из двух курсов.</p></div>':''}</div>`;dialog.showModal();dialog.scrollTop=0;}
 filters.addEventListener('click',e=>{const b=e.target.closest('[data-filter]');if(!b)return;category=b.dataset.filter;filters.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));render();});search.addEventListener('input',render);document.addEventListener('click',e=>{const b=e.target.closest('[data-course]');if(b)openCourse(b.dataset.course);});dialog.querySelector('.close').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});render();
 })();
+
+function initializeVacancies(carousel) {
+ const track = carousel.querySelector('.vacancy-track');
+ const slides = Array.from(track.children);
+ const navigation = carousel.querySelector('.vacancy-navigation');
+ const markers = carousel.querySelector('.vacancy-markers');
+ const status = carousel.querySelector('.vacancy-status');
+ let current = 0;
+ let settled = 0;
+ let pending = null;
+ let frame = 0;
+ let scrollTimer;
+
+ function slideOffset(index) {
+  return slides[index].getBoundingClientRect().left
+   - slides[0].getBoundingClientRect().left;
+ }
+
+ function nearestSlide() {
+  return slides.reduce((best, slide, index) =>
+   Math.abs(slideOffset(index) - track.scrollLeft) < Math.abs(slideOffset(best) - track.scrollLeft)
+    ? index : best, 0);
+ }
+
+ function showMarker(index) {
+  markers.children[current].removeAttribute('aria-current');
+  markers.children[index].setAttribute('aria-current', 'true');
+  current = index;
+ }
+
+ function goTo(index, behavior = 'auto') {
+  pending = index;
+  showMarker(index);
+  const left = slideOffset(index);
+  if (Math.abs(track.scrollLeft - left) < 1) return settle();
+  track.scrollTo({left, behavior});
+ }
+
+ function settle() {
+  pending = null;
+  const index = nearestSlide();
+  showMarker(index);
+  if (index === settled) return;
+  settled = index;
+  status.textContent = `Вакансия ${index + 1} из ${slides.length}`;
+ }
+
+ slides.forEach((slide, index) => {
+  const marker = document.createElement('button');
+  marker.type = 'button';
+  marker.setAttribute('aria-controls', track.id);
+  marker.setAttribute('aria-label', `Вакансия ${index + 1}. ${slide.querySelector('h4').textContent}`);
+  marker.addEventListener('click', () => goTo(index));
+  markers.append(marker);
+ });
+ showMarker(nearestSlide());
+ settled = current;
+ navigation.hidden = markers.hidden = false;
+
+ navigation.addEventListener('click', event => {
+  const button = event.target.closest('[data-vacancy-step]');
+  if (!button) return;
+  const next = (pending ?? nearestSlide()) + Number(button.dataset.vacancyStep);
+  const wraps = next < 0 || next === slides.length;
+  goTo((next + slides.length) % slides.length, wraps ? 'instant' : 'auto');
+ });
+
+ const supportsScrollEnd = 'onscrollend' in track;
+ if (supportsScrollEnd) track.addEventListener('scrollend', settle);
+ track.addEventListener('scroll', () => {
+  if (pending === null && !frame) {
+   frame = requestAnimationFrame(() => {
+    frame = 0;
+    if (pending === null) showMarker(nearestSlide());
+   });
+  }
+  if (!supportsScrollEnd) {
+   clearTimeout(scrollTimer);
+   scrollTimer = setTimeout(settle, 150);
+  }
+ }, {passive: true});
+}
+
+const vacancyCarousel = document.querySelector('.vacancies');
+if (vacancyCarousel) initializeVacancies(vacancyCarousel);

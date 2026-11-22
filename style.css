@@ -171,6 +171,76 @@ summary { cursor: pointer; font-weight: 600; }
 .future-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr)); gap: 1rem; }
 .future-grid article { display: flex; flex-direction: column; gap: .65rem; padding: clamp(1rem, 3vw, 2rem); border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
 .future-grid article > div { margin-block-start: auto; padding-block-start: .7rem; border-top: 1px solid var(--line); font-size: .86rem; }
+.vacancies { margin-block-start: clamp(2rem, 4vw, 3.5rem); padding: clamp(.75rem, 2.8vw, 2rem); border: 1px solid var(--line); border-radius: var(--radius); background: var(--wash); }
+.vacancies-heading, .vacancies-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: .7rem 1.25rem;
+}
+.vacancies-heading p, .vacancies-footer p { color: var(--muted); font-size: .875rem; }
+.vacancies-heading h3 { margin-block-end: .25rem; font: 550 clamp(1.5rem, 1.15rem + 1.25vw, 2.25rem)/1.2 var(--serif); }
+.vacancy-navigation { display: flex; gap: .45rem; }
+.vacancy-navigation button {
+  display: grid;
+  place-items: center;
+  inline-size: 2.75rem;
+  block-size: 2.75rem;
+  border: 1px solid var(--green);
+  border-radius: 50%;
+  color: var(--green-deep);
+  background: var(--surface);
+}
+.vacancy-navigation button:hover { background: var(--green-deep); color: var(--light-ink); }
+.vacancy-track {
+  display: flex;
+  gap: .75rem;
+  margin-block: 1rem .75rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: var(--green) var(--wash);
+}
+.vacancy-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  flex: 0 0 100%;
+  align-content: start;
+  gap: .85rem clamp(1rem, 4vw, 3rem);
+  min-inline-size: 0;
+  padding: clamp(1rem, 3vw, 2rem);
+  scroll-snap-align: start;
+  border-radius: .85rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.vacancy-source { color: var(--green); font-weight: 650; font-size: .85rem; }
+.vacancy-role h4 { margin: .3rem 0; font-size: clamp(1.15rem, .96rem + .9vw, 1.65rem); line-height: 1.25; }
+.vacancy-role p + a { display: inline-flex; align-items: center; gap: .4rem; min-block-size: 2.75rem; color: var(--green); font-size: .875rem; font-weight: 600; text-underline-offset: .2em; }
+.vacancy-work { padding-inline-start: clamp(1rem, 3vw, 2rem); border-inline-start: 1px solid var(--line); }
+.vacancy-work p, .vacancy-role h4 + p { color: var(--muted); font-size: .9rem; }
+.vacancy-courses, .vacancy-markers { display: flex; flex-wrap: wrap; gap: .35rem; }
+.vacancy-courses { margin-block-start: .75rem; }
+.vacancy-courses button {
+  min-block-size: 2.75rem;
+  padding: .4rem .65rem;
+  border: 1px solid var(--line);
+  border-radius: .45rem;
+  background: var(--wash);
+  color: var(--green-deep);
+  text-align: start;
+  font-size: .8rem;
+}
+.vacancy-courses button:hover { border-color: var(--green); }
+.vacancy-markers button { display: grid; place-items: center; inline-size: 1.7rem; block-size: 1.7rem; padding: 0; border: 0; background: transparent; }
+.vacancy-markers button::before { content: ''; inline-size: .5rem; block-size: .5rem; border-radius: 1rem; border: 1px solid var(--green); }
+.vacancy-markers button[aria-current="true"]::before { inline-size: .85rem; background: var(--green); }
+.vacancy-status { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (prefers-reduced-motion: no-preference) {
+  .vacancy-track { scroll-behavior: smooth; }
+}
 .admission { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.5rem clamp(1.5rem, 6vw, 5rem); border-top: 1px solid var(--line); }
 .admission p { margin-block: .75rem 1rem; }
 .admission-links { display: flex; flex-wrap: wrap; gap: .55rem 1rem; margin-block: .85rem; }
@@ -214,6 +284,8 @@ footer { background: var(--wash); color: var(--muted); padding-block: 1.25rem; }
   .model-top { padding: .25rem .85rem; }
   .bh-caption, .bh-controls, .bh-explanation { padding-inline: .85rem; }
   .heading, .pillars, .future-grid, .admission { grid-template-columns: minmax(0, 1fr); }
+  .vacancy-card { grid-template-columns: minmax(0, 1fr); gap: .65rem; }
+  .vacancy-work { padding-block-start: .65rem; padding-inline-start: 0; border-inline-start: 0; border-block-start: 1px solid var(--line); }
   .journey { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .journey > div:nth-child(-n + 2) { border-block-end: 1px solid var(--line); }
   .journey > div:nth-child(2) { border-inline-end: 0; }
