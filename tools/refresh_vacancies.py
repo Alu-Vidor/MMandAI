@@ -14,7 +14,7 @@ from xml.etree import ElementTree
 
 
 PUBLIC_FEED = "https://mathdept.ru/vacancies.json"
-MAX_AGE = timedelta(hours=24)
+MAX_AGE = timedelta(hours=48)
 HH_FEEDS = {
     "hh-ml": ("ML Engineer", "ml", r"\bml\b|машинн\w+ обучен"),
     "hh-model": ("математическое моделирование", "model", r"математическ\w+ модел"),

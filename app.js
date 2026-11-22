@@ -121,7 +121,7 @@ async function loadVacancies(carousel) {
  const postingFormat = new Intl.DateTimeFormat('ru-RU', {
   dateStyle: 'long', timeZone: 'Europe/Moscow'
  });
- const maxAge = 24 * 60 * 60 * 1000;
+ const maxAge = 48 * 60 * 60 * 1000;
  const allowedPaths = new Map([
   ['https://hh.ru', /^\/vacancy\/\d+\/?$/],
   ['https://job-boards.greenhouse.io', /^\/[\w-]+\/jobs\/\d+\/?$/],

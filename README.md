@@ -49,8 +49,10 @@
 
 ## Вакансии
 
-GitHub Actions запускает `tools/refresh_vacancies.py` при публикации, вручную и каждые шесть часов. Скрипт получает вакансии из RSS поиска HH.ru и открытых списков работодателей [Greenhouse](https://docs.greenhouse.io/job-board.html) и [Ashby](https://developers.ashbyhq.com/docs/public-job-posting-api). Список объявлений генерируется в `vacancies.json`.
+GitHub Actions запускает `tools/refresh_vacancies.py` ежедневно в 09:17 по Москве, при отправке изменений в `main` и при ручном запуске. Скрипт получает вакансии из RSS поиска HH.ru и открытых списков работодателей [Greenhouse](https://docs.greenhouse.io/job-board.html) и [Ashby](https://developers.ashbyhq.com/docs/public-job-posting-api). Список объявлений генерируется в `vacancies.json`.
 
-Время проверки хранится отдельно для каждого источника. Если запрос не удался, используется последняя успешная выборка за 24 часа. Более старые карточки скрываются. В публичном репозитории GitHub может отключить расписание после 60 дней без активности. В таком случае включите workflow в Actions. [Документация GitHub](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/disable-and-enable-workflows)
+Время проверки хранится отдельно для каждого источника. Если запрос не удался, сайт показывает последнюю успешную выборку не старше 48 часов. Этот срок учитывает задержки ежедневного запуска.
+
+После публикации GitHub Actions сохраняет обновлённый `vacancies.json` в ветке `codex/vacancy-feed`. Эти коммиты создают регулярную активность в репозитории, чтобы расписание продолжало работать после 60 дней без ручных изменений. Используется встроенный `GITHUB_TOKEN` с правом записи только в задании архивации. [Правила GitHub для расписаний](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/disable-and-enable-workflows)
 
 Для локальной проверки выполните `python tools/refresh_vacancies.py vacancies.json` и откройте сайт через локальный HTTP-сервер.

@@ -4,7 +4,7 @@ on:
     branches: [main]
   workflow_dispatch:
   schedule:
-    - cron: '17 */6 * * *'
+    - cron: '17 6 * * *' # 09:17 Moscow time
 permissions:
   contents: read
   pages: write
@@ -38,3 +38,34 @@ jobs:
     steps:
       - uses: actions/deploy-pages@v4
         id: deployment
+  archive-vacancies:
+    needs: deploy
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          path: ${{ runner.temp }}/pages-package
+      - name: Save published vacancy feed
+        shell: bash
+        run: |
+          feed_ref=refs/heads/codex/vacancy-feed
+          blob=$(tar -xOf "$RUNNER_TEMP/pages-package/artifact.tar" ./vacancies.json | git hash-object -w --stdin)
+          tree=$(printf '100644 blob %s\tvacancies.json\n' "$blob" | git mktree)
+          parent=()
+          remote_ref=$(git ls-remote --heads origin "$feed_ref")
+          if [[ -n "$remote_ref" ]]; then
+            git fetch --depth=1 origin "$feed_ref"
+            if [[ "$tree" == "$(git rev-parse 'FETCH_HEAD^{tree}')" ]]; then
+              exit 0
+            fi
+            parent=(-p FETCH_HEAD)
+          fi
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          commit=$(git commit-tree "$tree" "${parent[@]}" -m 'Archive published vacancies')
+          git push origin "$commit:$feed_ref"
