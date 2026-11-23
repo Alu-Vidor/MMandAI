@@ -40,7 +40,7 @@ button { cursor: pointer; }
 header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; column-gap: 1.5rem; row-gap: .75rem; padding-block: 1rem; border-bottom: 1px solid var(--line); }
 .brand { display: inline-flex; align-items: center; gap: .65rem; text-decoration: none; font-size: .8rem; line-height: 1.35; }
 .brand b { font-size: .92rem; }
-.brand strong { display: grid; place-items: center; inline-size: 2.75rem; block-size: 2.75rem; color: var(--light-ink); background: var(--blue-deep); border-radius: .75rem; font: 500 1.6rem/1 var(--serif); }
+.brand-mark { inline-size: 2.75rem; block-size: 2.75rem; flex: none; }
 nav { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem clamp(.75rem, 2vw, 1.75rem); }
 nav a, .nav-cta { display: inline-flex; align-items: center; min-block-size: 2.75rem; font-size: .9rem; font-weight: 600; text-decoration: none; }
 nav a:hover, .footer-main > a:hover { text-decoration: underline; text-underline-offset: .25em; }
