@@ -2,37 +2,37 @@
   "sources": {
     "hh-ml": {
       "market": "ru",
-      "checkedAt": "2026-11-22T16:30:02.924146+00:00",
+      "checkedAt": "2026-11-23T14:24:37.846732+00:00",
       "jobs": [
         {
-          "title": "DS\\ML Инженер",
-          "organization": "РНПК",
+          "title": "АI инженер LLM / ML инженер senior (ведущий инженер / тех лид)",
+          "organization": "Кадровый центр Сотрудничество",
           "location": "Москва",
-          "url": "https://hh.ru/vacancy/139671287",
+          "url": "https://hh.ru/vacancy/139761428",
           "field": "ml",
-          "published": "2026-11-22T14:18:36.410000+00:00"
+          "published": "2026-11-23T13:08:08.159000+00:00"
         },
         {
-          "title": "ML-инженер / AI Research Engineer (анализ музыки и генерация видео)",
-          "organization": "Боронд, Группа компаний",
+          "title": "Senior ML Engineer",
+          "organization": "Альфа-Селлер Технологии",
           "location": "Москва",
-          "url": "https://hh.ru/vacancy/139541536",
+          "url": "https://hh.ru/vacancy/139169309",
           "field": "ml",
-          "published": "2026-11-22T13:06:53.551000+00:00"
+          "published": "2026-11-23T11:35:46.296000+00:00"
         },
         {
-          "title": "ML-инженер",
-          "organization": "Т-Банк. ИТ. Разработка",
-          "location": "Красноярск",
-          "url": "https://hh.ru/vacancy/138782816",
+          "title": "Data Scientist/ML Engineer, направление CV",
+          "organization": "X5 Tech",
+          "location": "Москва",
+          "url": "https://hh.ru/vacancy/139742261",
           "field": "ml",
-          "published": "2026-11-22T08:47:05.360000+00:00"
+          "published": "2026-11-23T09:40:45.184000+00:00"
         }
       ]
     },
     "hh-model": {
       "market": "ru",
-      "checkedAt": "2026-11-22T16:30:02.991504+00:00",
+      "checkedAt": "2026-11-23T14:24:37.865799+00:00",
       "jobs": [
         {
           "title": "Инженер-программист (математическое моделирование)",
@@ -62,67 +62,67 @@
     },
     "hh-data": {
       "market": "ru",
-      "checkedAt": "2026-11-22T16:30:02.911891+00:00",
+      "checkedAt": "2026-11-23T14:24:37.992503+00:00",
       "jobs": [
         {
-          "title": "Аналитик данных (коммерческий блок)",
-          "organization": "Ozon fresh",
+          "title": "Бизнес-аналитик/аналитик данных",
+          "organization": "Министерство цифрового развития, связи и массовых коммуникаций Российской Федерации",
           "location": "Москва",
-          "url": "https://hh.ru/vacancy/138983907",
+          "url": "https://hh.ru/vacancy/139762523",
           "field": "data",
-          "published": "2026-11-22T15:24:00.926000+00:00"
+          "published": "2026-11-23T13:26:55.722000+00:00"
+        },
+        {
+          "title": "Аналитик данных (e-commerce / маркетплейсы)",
+          "organization": "Созвездие Красоты - Smart Buy",
+          "location": "Москва",
+          "url": "https://hh.ru/vacancy/139699863",
+          "field": "data",
+          "published": "2026-11-23T12:06:41.541000+00:00"
         },
         {
           "title": "Аналитик данных",
-          "organization": "СИГМАКОД",
+          "organization": "CARCADE",
           "location": "Москва",
-          "url": "https://hh.ru/vacancy/138799808",
+          "url": "https://hh.ru/vacancy/138843546",
           "field": "data",
-          "published": "2026-11-22T15:01:43.221000+00:00"
-        },
-        {
-          "title": "Аналитик данных",
-          "organization": "ЗУБР ОВК",
-          "location": "Москва",
-          "url": "https://hh.ru/vacancy/138973040",
-          "field": "data",
-          "published": "2026-11-22T11:16:04.771000+00:00"
+          "published": "2026-11-23T11:59:13.584000+00:00"
         }
       ]
     },
     "hh-education": {
       "market": "ru",
-      "checkedAt": "2026-11-22T16:30:02.956583+00:00",
+      "checkedAt": "2026-11-23T14:24:37.896491+00:00",
       "jobs": [
         {
-          "title": "Учитель математики и информатики",
-          "organization": "МБОУ СОШ №95",
-          "location": "Екатеринбург",
-          "url": "https://hh.ru/vacancy/139718164",
+          "title": "Учитель математики",
+          "organization": "МБОУ Средняя общеобразовательная школа 12",
+          "location": "Бийск",
+          "url": "https://hh.ru/vacancy/134878940",
           "field": "education",
-          "published": "2026-11-22T16:13:30.412000+00:00"
+          "published": "2026-11-23T14:08:22.893000+00:00"
+        },
+        {
+          "title": "Преподаватель математики и физики в частной школе",
+          "organization": "Хоклив Клуб",
+          "location": "Москва",
+          "url": "https://hh.ru/vacancy/139764031",
+          "field": "education",
+          "published": "2026-11-23T14:00:06.230000+00:00"
         },
         {
           "title": "Преподаватель математики",
-          "organization": "Альянс Знаний",
-          "location": "Омск",
-          "url": "https://hh.ru/vacancy/138855601",
-          "field": "education",
-          "published": "2026-11-22T15:34:30.014000+00:00"
-        },
-        {
-          "title": "Преподаватель математики и информатики",
-          "organization": "ДЖЕЙКЕТ",
+          "organization": "Кид Код",
           "location": "Москва",
-          "url": "https://hh.ru/vacancy/139672945",
+          "url": "https://hh.ru/vacancy/139763355",
           "field": "education",
-          "published": "2026-11-22T15:07:19.270000+00:00"
+          "published": "2026-11-23T13:45:15.635000+00:00"
         }
       ]
     },
     "physicsx": {
       "market": "international",
-      "checkedAt": "2026-11-22T16:30:03.111865+00:00",
+      "checkedAt": "2026-11-23T14:24:37.967768+00:00",
       "jobs": [
         {
           "title": "Senior/Principal Machine Learning Engineer (Aerospace Manufacturing)",
@@ -152,7 +152,7 @@
     },
     "constructorknowledgelabs": {
       "market": "international",
-      "checkedAt": "2026-11-22T16:30:03.069199+00:00",
+      "checkedAt": "2026-11-23T14:24:37.971408+00:00",
       "jobs": [
         {
           "title": "Quantum Physicist — Simulation and Neutral Atoms",
@@ -174,7 +174,7 @@
     },
     "root-access": {
       "market": "international",
-      "checkedAt": "2026-11-22T16:30:03.006197+00:00",
+      "checkedAt": "2026-11-23T14:24:37.924940+00:00",
       "jobs": [
         {
           "title": "Simulation and Software Engineer",
