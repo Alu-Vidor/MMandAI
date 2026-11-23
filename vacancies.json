@@ -2,7 +2,7 @@
   "sources": {
     "hh-ml": {
       "market": "ru",
-      "checkedAt": "2026-11-23T14:24:37.846732+00:00",
+      "checkedAt": "2026-11-23T18:22:38.952584+00:00",
       "jobs": [
         {
           "title": "АI инженер LLM / ML инженер senior (ведущий инженер / тех лид)",
@@ -32,7 +32,7 @@
     },
     "hh-model": {
       "market": "ru",
-      "checkedAt": "2026-11-23T14:24:37.865799+00:00",
+      "checkedAt": "2026-11-23T18:22:38.831977+00:00",
       "jobs": [
         {
           "title": "Инженер-программист (математическое моделирование)",
@@ -62,67 +62,67 @@
     },
     "hh-data": {
       "market": "ru",
-      "checkedAt": "2026-11-23T14:24:37.992503+00:00",
+      "checkedAt": "2026-11-23T18:22:38.833172+00:00",
       "jobs": [
         {
-          "title": "Бизнес-аналитик/аналитик данных",
-          "organization": "Министерство цифрового развития, связи и массовых коммуникаций Российской Федерации",
+          "title": "Аналитик данных Senior (РСХБ-Экосистема)",
+          "organization": "РСХБ-Интех",
           "location": "Москва",
-          "url": "https://hh.ru/vacancy/139762523",
+          "url": "https://hh.ru/vacancy/138856770",
           "field": "data",
-          "published": "2026-11-23T13:26:55.722000+00:00"
+          "published": "2026-11-23T17:49:08.664000+00:00"
         },
         {
-          "title": "Аналитик данных (e-commerce / маркетплейсы)",
-          "organization": "Созвездие Красоты - Smart Buy",
+          "title": "Аналитик данных (Профиль)",
+          "organization": "Сбер. IT",
           "location": "Москва",
-          "url": "https://hh.ru/vacancy/139699863",
+          "url": "https://hh.ru/vacancy/139767655",
           "field": "data",
-          "published": "2026-11-23T12:06:41.541000+00:00"
+          "published": "2026-11-23T16:49:50.346000+00:00"
         },
         {
-          "title": "Аналитик данных",
-          "organization": "CARCADE",
+          "title": "Аналитик данных в команду Клиентских технологий",
+          "organization": "ОТП Банк. IT",
           "location": "Москва",
-          "url": "https://hh.ru/vacancy/138843546",
+          "url": "https://hh.ru/vacancy/139767133",
           "field": "data",
-          "published": "2026-11-23T11:59:13.584000+00:00"
+          "published": "2026-11-23T16:27:16.054000+00:00"
         }
       ]
     },
     "hh-education": {
       "market": "ru",
-      "checkedAt": "2026-11-23T14:24:37.896491+00:00",
+      "checkedAt": "2026-11-23T18:22:38.834016+00:00",
       "jobs": [
         {
           "title": "Учитель математики",
-          "organization": "МБОУ Средняя общеобразовательная школа 12",
-          "location": "Бийск",
-          "url": "https://hh.ru/vacancy/134878940",
+          "organization": "ГБОУ Средняя школа №195 Красногвардейского района Санкт-Петербурга",
+          "location": "Санкт-Петербург",
+          "url": "https://hh.ru/vacancy/139495540",
           "field": "education",
-          "published": "2026-11-23T14:08:22.893000+00:00"
+          "published": "2026-11-23T16:28:56.959000+00:00"
         },
         {
-          "title": "Преподаватель математики и физики в частной школе",
-          "organization": "Хоклив Клуб",
+          "title": "Учитель математики",
+          "organization": "Автономная некоммерческая общеобразовательная организация Областной Технолицей им. В. И. Долгих",
           "location": "Москва",
-          "url": "https://hh.ru/vacancy/139764031",
+          "url": "https://hh.ru/vacancy/139707648",
           "field": "education",
-          "published": "2026-11-23T14:00:06.230000+00:00"
+          "published": "2026-11-23T16:24:55.599000+00:00"
         },
         {
-          "title": "Преподаватель математики",
-          "organization": "Кид Код",
+          "title": "Учитель математики",
+          "organization": "ГБОУ Школа № 1613",
           "location": "Москва",
-          "url": "https://hh.ru/vacancy/139763355",
+          "url": "https://hh.ru/vacancy/139767120",
           "field": "education",
-          "published": "2026-11-23T13:45:15.635000+00:00"
+          "published": "2026-11-23T16:24:40.252000+00:00"
         }
       ]
     },
     "physicsx": {
       "market": "international",
-      "checkedAt": "2026-11-23T14:24:37.967768+00:00",
+      "checkedAt": "2026-11-23T18:22:38.888656+00:00",
       "jobs": [
         {
           "title": "Senior/Principal Machine Learning Engineer (Aerospace Manufacturing)",
@@ -152,7 +152,7 @@
     },
     "constructorknowledgelabs": {
       "market": "international",
-      "checkedAt": "2026-11-23T14:24:37.971408+00:00",
+      "checkedAt": "2026-11-23T18:22:38.885437+00:00",
       "jobs": [
         {
           "title": "Quantum Physicist — Simulation and Neutral Atoms",
@@ -174,7 +174,7 @@
     },
     "root-access": {
       "market": "international",
-      "checkedAt": "2026-11-23T14:24:37.924940+00:00",
+      "checkedAt": "2026-11-23T18:22:38.960711+00:00",
       "jobs": [
         {
           "title": "Simulation and Software Engineer",
