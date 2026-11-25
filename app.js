@@ -1,5 +1,5 @@
-(()=>{'use strict';const courses=window.COURSES,groups=window.GROUPS,colors={math:'#3266ce',model:'#008c80',ai:'#7853c1',code:'#c27522',general:'#687589',practice:'#a64c73'};const gantt=document.querySelector('#gantt'),filters=document.querySelector('#filters'),search=document.querySelector('#search'),dialog=document.querySelector('#course-dialog');let category='all',semester=1,view=window.matchMedia('(max-width:700px)').matches?'semester':'gantt';const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));filters.innerHTML=Object.entries({all:'Все дисциплины',...groups}).map(([id,name])=>`<button data-filter="${id}" aria-pressed="${id==='all'}" style="--category:${colors[id]||'#102c4d'}">${name}</button>`).join('');
-function renderGantt(){const q=search.value.trim().toLocaleLowerCase('ru');const visible=courses.filter(c=>(category==='all'||c.group===category)&&c.name.toLocaleLowerCase('ru').includes(q));let html='<div class="gantt-header"><div>Дисциплина / семестр</div>'+Array.from({length:10},(_,i)=>`<div>${i+1}<small>${Math.floor(i/2)+1} курс</small></div>`).join('')+'</div>';for(const [key,label]of Object.entries(groups)){const items=visible.filter(c=>c.group===key).sort((a,b)=>a.semesters[0]-b.semesters[0]||a.id.localeCompare(b.id));if(!items.length)continue;html+=`<div class="group-label" style="--category:${colors[key]}">${label} · ${items.length}</div>`;for(const c of items){const optional=c.kind.includes('выбору')||c.kind==='Факультатив';const runs=[];for(const s of c.semesters){const last=runs.at(-1);if(last&&last.at(-1)===s-1)last.push(s);else runs.push([s]);}html+=`<div class="course-row" style="--category:${colors[key]}"><button class="course-name" data-course="${esc(c.id)}">${esc(c.name)}${optional?`<small>${esc(c.kind)}</small>`:''}</button>`+Array.from({length:10},(_,i)=>`<div class="cell" style="grid-column:${i+2}"></div>`).join('');for(const run of runs)html+=`<button class="bar ${optional?'optional':''}" style="grid-column:${run[0]+1}/span ${run.length}" data-course="${esc(c.id)}" aria-label="${esc(c.name)}, семестры ${run.join(', ')}. Открыть описание">${run.length>1?run[0]+'–'+run.at(-1):run[0]}</button>`;html+='</div>';}}if(!visible.length)html+='<p class="empty">Ничего не найдено. Попробуйте другое название или раздел.</p>';gantt.innerHTML=html;document.querySelector('#count').textContent=`Показано: ${visible.length} из ${courses.length} дисциплин, практик и итоговых работ`;}
+(()=>{'use strict';const courses=window.COURSES,groups=window.GROUPS,colors={math:'#3266ce',model:'#008c80',ai:'#7853c1',code:'#c27522',general:'#687589',practice:'#a64c73'};const gantt=document.querySelector('#gantt'),filters=document.querySelector('#filters'),search=document.querySelector('#search'),dialog=document.querySelector('#course-dialog');let category='all',semester=1,view=window.matchMedia('(max-width:700px)').matches?'semester':'gantt';const collapsedGroups=new Set();const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));filters.innerHTML=Object.entries({all:'Все дисциплины',...groups}).map(([id,name])=>`<button data-filter="${id}" aria-pressed="${id==='all'}" style="--category:${colors[id]||'#102c4d'}">${name}</button>`).join('');
+function renderGantt(){const q=search.value.trim().toLocaleLowerCase('ru');const visible=courses.filter(c=>(category==='all'||c.group===category)&&c.name.toLocaleLowerCase('ru').includes(q));let html='<div class="gantt-header"><div>Дисциплина / семестр</div>'+Array.from({length:10},(_,i)=>`<div>${i+1}<small>${Math.floor(i/2)+1} курс</small></div>`).join('')+'</div>';for(const [key,label]of Object.entries(groups)){const items=visible.filter(c=>c.group===key).sort((a,b)=>a.semesters[0]-b.semesters[0]||a.id.localeCompare(b.id));if(!items.length)continue;const isCollapsed=category==='all'&&!q&&collapsedGroups.has(key);html+=`<button type="button" class="group-label group-toggle" data-group="${esc(key)}" ${category!=='all'||q?'disabled':''} aria-expanded="${!isCollapsed}" aria-controls="group-${esc(key)}" style="--category:${colors[key]}">${esc(label)} · ${items.length}<span aria-hidden="true">${isCollapsed?'+':'−'}</span></button><div id="group-${esc(key)}" ${isCollapsed?'hidden':''}>`;for(const c of items){const optional=c.kind.includes('выбору')||c.kind==='Факультатив';const runs=[];for(const s of c.semesters){const last=runs.at(-1);if(last&&last.at(-1)===s-1)last.push(s);else runs.push([s]);}html+=`<div class="course-row" style="--category:${colors[key]}"><button class="course-name" data-course="${esc(c.id)}">${esc(c.name)}${optional?`<small>${esc(c.kind)}</small>`:''}</button>`+Array.from({length:10},(_,i)=>`<div class="cell" style="grid-column:${i+2}"></div>`).join('');for(const run of runs)html+=`<button class="bar ${optional?'optional':''}" style="grid-column:${run[0]+1}/span ${run.length}" data-course="${esc(c.id)}" aria-label="${esc(c.name)}, семестры ${run.join(', ')}. Открыть описание">${run.length>1?run[0]+'–'+run.at(-1):run[0]}</button>`;html+='</div>';}html+='</div>';}if(!visible.length)html+='<p class="empty">Ничего не найдено. Попробуйте другое название или раздел.</p>';gantt.innerHTML=html;document.querySelector('#count').textContent=`Показано: ${visible.length} из ${courses.length} дисциплин, практик и итоговых работ`;}
 function renderSemester(){
  const q=search.value.trim().toLocaleLowerCase('ru');
  const selected=courses.filter(c=>c.semesters.includes(semester)&&(category==='all'||c.group===category)&&c.name.toLocaleLowerCase('ru').includes(q));
@@ -9,7 +9,7 @@ function renderSemester(){
 }
 function render(){renderGantt();renderSemester();document.querySelector('.gantt-scroll').hidden=view!=='gantt';document.querySelector('#semester-panel').hidden=view!=='semester';document.querySelector('.scroll-hint').hidden=view!=='gantt';document.querySelector('.chart-meta>span:last-child').hidden=view!=='gantt';document.querySelectorAll('[data-view]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.view===view)));}
 document.querySelector('.plan-view').addEventListener('click',e=>{const b=e.target.closest('[data-view]');if(!b)return;view=b.dataset.view;render();});
-document.querySelector('.semester-picker').addEventListener('click',e=>{const b=e.target.closest('[data-semester]');if(!b)return;semester=Number(b.dataset.semester);render();});
+document.querySelector('.semester-picker').addEventListener('click',e=>{const b=e.target.closest('[data-semester]');if(!b)return;semester=Number(b.dataset.semester);render();document.querySelector('[data-semester="'+semester+'"]').focus({preventScroll:true});});
 function careerText(c){
  if(c.name==='Программные средства 1C')return 'Разработчику прикладных решений и специалисту по автоматизации — для обработки данных, расчётов и создания отчётов на платформе «1С:Предприятие».';
  if(c.name==='Теория разработки пользовательских интерфейсов')return 'Разработчику программ и проектировщику интерфейсов — чтобы сделать расчётный инструмент понятным и снизить число ошибок при работе с ним.';
@@ -18,7 +18,54 @@ function careerText(c){
  return {math:'Специалисту по моделированию, исследователю и разработчику ИИ — как математическая основа для постановки и решения задач.',model:'Специалисту по математическому моделированию и исследователю — для описания процессов, вычислительных экспериментов и проверки результатов.',ai:'Специалисту по машинному обучению и аналитику данных — для построения моделей, проверки прогнозов и исследования закономерностей.',code:'Разработчику научного программного обеспечения и систем ИИ — для создания надёжных вычислительных инструментов.',practice:'Исследователю и разработчику — чтобы пройти путь от постановки задачи до проверенного результата.'}[c.group]||'';
 }
 function openCourse(id){const c=courses.find(c=>c.id===id);if(!c)return;document.querySelector('#detail').innerHTML=`<div style="--category:${colors[c.group]}"><div class="detail-tag">${esc(groups[c.group])} · ${esc(c.kind)}</div><h2 class="detail-title" id="detail-title">${esc(c.name)}</h2><div class="detail-meta"><span>Семестры: ${c.semesters.join(', ')}</span><span>${c.credits} з.е.</span><span>${c.hours} часов</span></div><div class="detail-block"><h3>Что изучаем</h3><p>${esc(c.about)}</p></div><div class="detail-block why"><h3>Зачем это нужно?</h3><p>${esc(c.why)}</p></div><div class="detail-block"><h3>Например, вы сможете</h3><p>${esc(c.example)}</p></div>${careerText(c)?`<div class="detail-block"><h3>Кому пригодится в работе</h3><p>${esc(careerText(c))}</p></div>`:''}${c.kind.includes('выбору')?'<div class="detail-block"><p>В этой паре выбирается один из двух курсов.</p></div>':''}</div>`;dialog.showModal();dialog.scrollTop=0;}
-filters.addEventListener('click',e=>{const b=e.target.closest('[data-filter]');if(!b)return;category=b.dataset.filter;filters.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));render();});search.addEventListener('input',render);document.addEventListener('click',e=>{const b=e.target.closest('[data-course]');if(b)openCourse(b.dataset.course);});dialog.querySelector('.close').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});render();
+filters.addEventListener('click',e=>{const b=e.target.closest('[data-filter]');if(!b)return;category=b.dataset.filter;filters.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));render();});search.addEventListener('input',()=>{if(view==='semester'){const q=search.value.trim().toLocaleLowerCase('ru');if(q){const matches=courses.filter(c=>(category==='all'||c.group===category)&&c.name.toLocaleLowerCase('ru').includes(q));if(matches.length&&!matches.some(c=>c.semesters.includes(semester)))semester=Math.min(...matches.flatMap(c=>c.semesters));}}render();});document.addEventListener('click',e=>{const b=e.target.closest('[data-course]');if(b)openCourse(b.dataset.course);});dialog.querySelector('.close').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
+gantt.addEventListener('click',e=>{
+  const b=e.target.closest('[data-group]');if(!b)return;
+  if(category!=='all'||search.value.trim())return;
+  const key=b.dataset.group;
+  if(collapsedGroups.has(key))collapsedGroups.delete(key);else collapsedGroups.add(key);
+  render();
+  gantt.querySelector('[data-group="'+key+'"]')?.focus({preventScroll:true});
+});
+document.querySelector('#reset-plan').addEventListener('click',()=>{
+  category='all';search.value='';collapsedGroups.clear();
+  filters.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter==='all')));
+  render();search.focus({preventScroll:true});
+});
+document.querySelector('.journey').addEventListener('click',e=>{
+  const b=e.target.closest('[data-stage]');if(!b)return;
+  view='semester';semester=Number(b.dataset.stage);category='all';search.value='';
+  filters.querySelectorAll('button').forEach(item=>item.setAttribute('aria-pressed',String(item.dataset.filter==='all')));
+  render();
+  document.querySelector('#semester-panel').scrollIntoView({block:'start',behavior:'instant'});
+  document.querySelector('[data-semester="'+semester+'"]').focus({preventScroll:true});
+});
+render();
+})();
+
+(() => {
+  const header=document.querySelector('.site-header');
+  const links=[...header.querySelectorAll('nav a[href^="#"]')].map(link=>({link,section:document.querySelector(link.hash)})).filter(item=>item.section);
+  const settings=document.querySelector('.bh-settings');
+  const compact=window.matchMedia('(max-width:56rem)');
+  settings.open=!compact.matches;
+  compact.addEventListener('change',e=>{settings.open=!e.matches;});
+  let frame=0;
+  function update(){
+    frame=0;
+    const offset=header.getBoundingClientRect().height;
+    document.documentElement.style.setProperty('--header-offset',Math.ceil(offset)+'px');
+    const threshold=offset+40;
+    let active=null;
+    for(const item of links)if(item.section.getBoundingClientRect().top<=threshold)active=item.link;
+    if(window.scrollY+window.innerHeight>=document.documentElement.scrollHeight-8)active=links.at(-1)?.link;
+    links.forEach(({link})=>{if(link===active)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});
+  }
+  function schedule(){if(!frame)frame=requestAnimationFrame(update);}
+  new ResizeObserver(schedule).observe(header);
+  window.addEventListener('scroll',schedule,{passive:true});
+  window.addEventListener('resize',schedule);
+  update();
 })();
 
 function initializeVacancies(carousel) {
