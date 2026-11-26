@@ -2,38 +2,46 @@
   "sources": {
     "hh-ml": {
       "market": "ru",
-      "checkedAt": "2026-11-25T20:36:23.972385+00:00",
+      "checkedAt": "2026-11-26T17:00:41.089388+00:00",
       "jobs": [
         {
-          "title": "DS\\ML Инженер",
-          "organization": "РНПК",
+          "title": "ML -инженер (CV)",
+          "organization": "КИТТ",
           "location": "Москва",
-          "url": "https://hh.ru/vacancy/139671287",
+          "url": "https://hh.ru/vacancy/135928560",
           "field": "ml",
-          "published": "2026-11-25T14:18:36.410000+00:00"
+          "published": "2026-11-26T11:41:13.031000+00:00"
         },
         {
-          "title": "ML-инженер / AI Research Engineer (анализ музыки и генерация видео)",
-          "organization": "Боронд, Группа компаний",
+          "title": "Senior ML Engineer",
+          "organization": "Альфа-Селлер Технологии",
           "location": "Москва",
-          "url": "https://hh.ru/vacancy/139541536",
+          "url": "https://hh.ru/vacancy/139169309",
           "field": "ml",
-          "published": "2026-11-25T13:06:53.551000+00:00"
+          "published": "2026-11-26T11:35:46.296000+00:00"
         },
         {
-          "title": "ML Engineer (ML/LLM, AI-агенты для MedTech)",
-          "organization": "Лучи",
+          "title": "ML инженер",
+          "organization": "Сбер. IT",
           "location": "Москва",
-          "url": "https://hh.ru/vacancy/139840877",
+          "url": "https://hh.ru/vacancy/139880891",
           "field": "ml",
-          "published": "2026-11-25T10:02:04.628000+00:00"
+          "published": "2026-11-26T10:07:30.622000+00:00"
         }
       ]
     },
     "hh-model": {
       "market": "ru",
-      "checkedAt": "2026-11-25T20:36:23.753792+00:00",
+      "checkedAt": "2026-11-26T17:00:41.209756+00:00",
       "jobs": [
+        {
+          "title": "Учитель / Преподаватель программирования, математического моделирования и IT, колледж",
+          "organization": "АНПОО Институт Развития Бизнеса и Стратегий",
+          "location": "Саратов",
+          "url": "https://hh.ru/vacancy/139886150",
+          "field": "model",
+          "published": "2026-11-26T11:42:53.733000+00:00"
+        },
         {
           "title": "Инженер-программист (математическое моделирование)",
           "organization": "ФГУП Центральный научно-исследовательский институт химии и механики",
@@ -49,80 +57,72 @@
           "url": "https://hh.ru/vacancy/134431752",
           "field": "model",
           "published": "2026-11-19T07:58:21.001000+00:00"
-        },
-        {
-          "title": "Ведущий инженер-химик (математическое моделирование)",
-          "organization": "Титан, Группа компаний",
-          "location": "Омск",
-          "url": "https://hh.ru/vacancy/139640845",
-          "field": "model",
-          "published": "2026-11-19T05:34:10.918000+00:00"
         }
       ]
     },
     "hh-data": {
       "market": "ru",
-      "checkedAt": "2026-11-25T20:36:23.842762+00:00",
+      "checkedAt": "2026-11-26T17:00:41.270448+00:00",
       "jobs": [
         {
-          "title": "Аналитик данных отдела продаж / Sales Analyst",
-          "organization": "Large Non-Food FMCG Company",
-          "location": "Москва",
-          "url": "https://hh.ru/vacancy/138857034",
-          "field": "data",
-          "published": "2026-11-25T19:05:19.195000+00:00"
-        },
-        {
-          "title": "Аналитик данных (коммерческий блок)",
-          "organization": "Ozon fresh",
-          "location": "Москва",
-          "url": "https://hh.ru/vacancy/138983907",
-          "field": "data",
-          "published": "2026-11-25T15:24:00.926000+00:00"
-        },
-        {
           "title": "Аналитик данных",
-          "organization": "Lamoda",
+          "organization": "АНО Агентство развития профессионального мастерства (Ворлдскиллс Россия)",
           "location": "Москва",
-          "url": "https://hh.ru/vacancy/138855346",
+          "url": "https://hh.ru/vacancy/138112805",
           "field": "data",
-          "published": "2026-11-25T15:12:45.261000+00:00"
+          "published": "2026-11-26T15:06:27.502000+00:00"
+        },
+        {
+          "title": "Ведущий аналитик данных",
+          "organization": "Спутник",
+          "location": "Краснодар",
+          "url": "https://hh.ru/vacancy/139386982",
+          "field": "data",
+          "published": "2026-11-26T15:01:30.100000+00:00"
+        },
+        {
+          "title": "Менеджер (Аналитик данных со знанием SQL)",
+          "organization": "Сбер для экспертов",
+          "location": "Ставрополь",
+          "url": "https://hh.ru/vacancy/139893496",
+          "field": "data",
+          "published": "2026-11-26T14:40:02.447000+00:00"
         }
       ]
     },
     "hh-education": {
       "market": "ru",
-      "checkedAt": "2026-11-25T20:36:23.992709+00:00",
+      "checkedAt": "2026-11-26T17:00:41.125342+00:00",
       "jobs": [
         {
-          "title": "Преподаватель креативной математики для детей",
-          "organization": "KiberOne (ИП Хорошавина Арина Андреевна)",
-          "location": "Москва",
-          "url": "https://hh.ru/vacancy/139487843",
+          "title": "Учитель математики",
+          "organization": "МОУ СШ №103",
+          "location": "Волгоград",
+          "url": "https://hh.ru/vacancy/139895121",
           "field": "education",
-          "published": "2026-11-25T16:45:31.813000+00:00"
+          "published": "2026-11-26T16:51:06.529000+00:00"
         },
         {
           "title": "Учитель математики",
-          "organization": "МАОУ СОШ № 79",
-          "location": "Екатеринбург",
-          "url": "https://hh.ru/vacancy/139860447",
+          "organization": "ГБОУ Средняя школа №195 Красногвардейского района Санкт-Петербурга",
+          "location": "Санкт-Петербург",
+          "url": "https://hh.ru/vacancy/139495540",
           "field": "education",
-          "published": "2026-11-25T15:50:23.121000+00:00"
+          "published": "2026-11-26T16:28:56.959000+00:00"
         },
         {
-          "title": "Учитель математики и информатики",
-          "organization": "Русская классическая школа Счастливая семья",
-          "location": "Мытищи (Московская область)",
-          "url": "https://hh.ru/vacancy/139860369",
+          "title": "Преподаватель по математике, физике, информатике",
+          "organization": "Мастерская знаний",
+          "location": "Калининград",
+          "url": "https://hh.ru/vacancy/139894938",
           "field": "education",
-          "published": "2026-11-25T15:45:24.944000+00:00"
+          "published": "2026-11-26T16:27:39.435000+00:00"
         }
       ]
     },
     "physicsx": {
       "market": "international",
-      "checkedAt": "2026-11-25T20:36:23.882828+00:00",
+      "checkedAt": "2026-11-26T17:00:41.273529+00:00",
       "jobs": [
         {
           "title": "Senior/Principal Machine Learning Engineer (Aerospace Manufacturing)",
@@ -152,7 +152,7 @@
     },
     "constructorknowledgelabs": {
       "market": "international",
-      "checkedAt": "2026-11-25T20:36:23.913789+00:00",
+      "checkedAt": "2026-11-26T17:00:41.265121+00:00",
       "jobs": [
         {
           "title": "Quantum Physicist — Simulation and Neutral Atoms",
@@ -174,7 +174,7 @@
     },
     "root-access": {
       "market": "international",
-      "checkedAt": "2026-11-25T20:36:23.949545+00:00",
+      "checkedAt": "2026-11-26T17:00:41.300224+00:00",
       "jobs": [
         {
           "title": "Simulation and Software Engineer",
