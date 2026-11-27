@@ -2,8 +2,16 @@
   "sources": {
     "hh-ml": {
       "market": "ru",
-      "checkedAt": "2026-11-26T17:00:41.089388+00:00",
+      "checkedAt": "2026-11-27T16:46:43.942064+00:00",
       "jobs": [
+        {
+          "title": "Senior ML Engineer / Data Scientist",
+          "organization": "Назаренко Дмитрий Денисович",
+          "location": "Фокино (Брянская область)",
+          "url": "https://hh.ru/vacancy/139912054",
+          "field": "ml",
+          "published": "2026-11-27T09:02:59.117000+00:00"
+        },
         {
           "title": "ML -инженер (CV)",
           "organization": "КИТТ",
@@ -19,20 +27,12 @@
           "url": "https://hh.ru/vacancy/139169309",
           "field": "ml",
           "published": "2026-11-26T11:35:46.296000+00:00"
-        },
-        {
-          "title": "ML инженер",
-          "organization": "Сбер. IT",
-          "location": "Москва",
-          "url": "https://hh.ru/vacancy/139880891",
-          "field": "ml",
-          "published": "2026-11-26T10:07:30.622000+00:00"
         }
       ]
     },
     "hh-model": {
       "market": "ru",
-      "checkedAt": "2026-11-26T17:00:41.209756+00:00",
+      "checkedAt": "2026-11-27T16:46:43.966805+00:00",
       "jobs": [
         {
           "title": "Учитель / Преподаватель программирования, математического моделирования и IT, колледж",
@@ -62,68 +62,76 @@
     },
     "hh-data": {
       "market": "ru",
-      "checkedAt": "2026-11-26T17:00:41.270448+00:00",
+      "checkedAt": "2026-11-27T16:46:43.949594+00:00",
       "jobs": [
         {
-          "title": "Аналитик данных",
-          "organization": "АНО Агентство развития профессионального мастерства (Ворлдскиллс Россия)",
+          "title": "Аналитик данных / Risk Data Scientist (Кредитный риск)",
+          "organization": "ВТБ Факторинг",
           "location": "Москва",
-          "url": "https://hh.ru/vacancy/138112805",
+          "url": "https://hh.ru/vacancy/139442884",
           "field": "data",
-          "published": "2026-11-26T15:06:27.502000+00:00"
+          "published": "2026-11-27T15:04:43.956000+00:00"
         },
         {
-          "title": "Ведущий аналитик данных",
-          "organization": "Спутник",
-          "location": "Краснодар",
-          "url": "https://hh.ru/vacancy/139386982",
+          "title": "Аналитик данных (команда трейд-маркетинга)",
+          "organization": "Ozon Офис и Коммерция",
+          "location": "Москва",
+          "url": "https://hh.ru/vacancy/137877724",
           "field": "data",
-          "published": "2026-11-26T15:01:30.100000+00:00"
+          "published": "2026-11-27T14:57:21+00:00"
         },
         {
-          "title": "Менеджер (Аналитик данных со знанием SQL)",
-          "organization": "Сбер для экспертов",
-          "location": "Ставрополь",
-          "url": "https://hh.ru/vacancy/139893496",
+          "title": "Аналитик данных",
+          "organization": "ПромоДата",
+          "location": "Москва",
+          "url": "https://hh.ru/vacancy/139016098",
           "field": "data",
-          "published": "2026-11-26T14:40:02.447000+00:00"
+          "published": "2026-11-27T14:18:32.723000+00:00"
         }
       ]
     },
     "hh-education": {
       "market": "ru",
-      "checkedAt": "2026-11-26T17:00:41.125342+00:00",
+      "checkedAt": "2026-11-27T16:46:43.979036+00:00",
       "jobs": [
         {
-          "title": "Учитель математики",
-          "organization": "МОУ СШ №103",
-          "location": "Волгоград",
-          "url": "https://hh.ru/vacancy/139895121",
+          "title": "Преподаватель математики / физики / информатики в классы",
+          "organization": "Онлайн-школа EcoFamilySchool",
+          "location": "Москва",
+          "url": "https://hh.ru/vacancy/139939347",
           "field": "education",
-          "published": "2026-11-26T16:51:06.529000+00:00"
+          "published": "2026-11-27T14:45:12.139000+00:00"
         },
         {
           "title": "Учитель математики",
-          "organization": "ГБОУ Средняя школа №195 Красногвардейского района Санкт-Петербурга",
-          "location": "Санкт-Петербург",
-          "url": "https://hh.ru/vacancy/139495540",
+          "organization": "Бюджетное общеобразовательное учреждение города Омска Средняя общеобразовательная школа № 122",
+          "location": "Омск",
+          "url": "https://hh.ru/vacancy/139442413",
           "field": "education",
-          "published": "2026-11-26T16:28:56.959000+00:00"
+          "published": "2026-11-27T14:44:33.665000+00:00"
         },
         {
-          "title": "Преподаватель по математике, физике, информатике",
-          "organization": "Мастерская знаний",
-          "location": "Калининград",
-          "url": "https://hh.ru/vacancy/139894938",
+          "title": "Преподаватель математики / физики / информатики (подготовка к ОГЭ и ЕГЭ)",
+          "organization": "Онлайн-школа EcoFamilySchool",
+          "location": "Москва",
+          "url": "https://hh.ru/vacancy/139939050",
           "field": "education",
-          "published": "2026-11-26T16:27:39.435000+00:00"
+          "published": "2026-11-27T14:34:30.898000+00:00"
         }
       ]
     },
     "physicsx": {
       "market": "international",
-      "checkedAt": "2026-11-26T17:00:41.273529+00:00",
+      "checkedAt": "2026-11-27T16:46:44.092073+00:00",
       "jobs": [
+        {
+          "title": "Senior Research Machine Learning Engineer",
+          "organization": "PhysicsX",
+          "location": "New York, United States",
+          "url": "https://job-boards.eu.greenhouse.io/physicsx/jobs/4789202101",
+          "field": "ml",
+          "published": null
+        },
         {
           "title": "Senior/Principal Machine Learning Engineer (Aerospace Manufacturing)",
           "organization": "PhysicsX",
@@ -139,20 +147,12 @@
           "url": "https://job-boards.eu.greenhouse.io/physicsx/jobs/5018019101",
           "field": "model",
           "published": null
-        },
-        {
-          "title": "Senior Simulation Engineer - Electromagnetics Specialist",
-          "organization": "PhysicsX",
-          "location": "New York",
-          "url": "https://job-boards.eu.greenhouse.io/physicsx/jobs/4952597101",
-          "field": "model",
-          "published": null
         }
       ]
     },
     "constructorknowledgelabs": {
       "market": "international",
-      "checkedAt": "2026-11-26T17:00:41.265121+00:00",
+      "checkedAt": "2026-11-27T16:46:44.092836+00:00",
       "jobs": [
         {
           "title": "Quantum Physicist — Simulation and Neutral Atoms",
@@ -174,7 +174,7 @@
     },
     "root-access": {
       "market": "international",
-      "checkedAt": "2026-11-26T17:00:41.300224+00:00",
+      "checkedAt": "2026-11-27T16:46:44.057649+00:00",
       "jobs": [
         {
           "title": "Simulation and Software Engineer",
